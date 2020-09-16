@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <test></test>
+	<editor></editor>
     <img alt="Vue logo" src="./assets/logo.png">
     <div>Hello</div>
   </div>
 </template>
 
 <script>
-import test from './components/test.vue';
+import head from './components/head.vue';
+import editor from './components/mdEditor.vue';
 
 export default {
   name: 'App',
   components: {
     test,
+	editor,
   },
 };
 </script>
