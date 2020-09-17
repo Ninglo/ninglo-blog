@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <test></test>
-	<editor></editor>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <div>Hello</div>
+    <myhead :items="[{ id: 1, uri: 'bing.com' }, { id: 2, uri: 'baidu.com' }]"></myhead>
+    <editor></editor>
   </div>
 </template>
 
 <script>
-import head from './components/head.vue';
+import myhead from './components/myhead.vue';
 import editor from './components/mdEditor.vue';
 
 export default {
   name: 'App',
   components: {
-    test,
-	editor,
+    editor,
+    myhead,
   },
 };
 </script>

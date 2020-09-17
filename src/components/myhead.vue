@@ -1,25 +1,25 @@
 <template>
-    <div class="head">
+    <header class="myhead">
         <a v-for="item in items" :key="item.id" :href="item.uri">{{ item.id }}</a>
-    </div>
+    </header>
 </template>
 
 <script>
 export default {
-  name: 'head',
+  name: 'myhead',
   props: {
-    items: () => [
-      { id: 1, uri: 'bing.com' },
-      { id: 2, uri: 'baidu.com' },
-    ],
+    items: Array,
   },
 };
 </script>
 
 <style scoped>
-.head {
+.myhead {
+    position: absolute;
+    top: 0px;
+    left: 1%;
     height: 50px;
-    width: 100%;
+    width: 98%;
     border: solid;
 }
 </style>
