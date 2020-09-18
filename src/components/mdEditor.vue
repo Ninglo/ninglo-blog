@@ -1,39 +1,35 @@
 <template>
     <div id="editor">
-        <textarea :value="mdText" @input="mdText = $event.target.value"></textarea>
-        <div v-html="compliedMarkdown" ref="mdHTML"></div>
-        <button @click="submit">Submit</button>
+      <div style="width: 100%; height: 3%"><button @click="submit">Submit</button></div>
+      <textarea :value="mdText" @input="mdText = $event.target.value"></textarea>
+      <div class="left" v-html="compliedMarkdown" ref="mdHTML"></div>
     </div>
 </template>
 
 <script>
-import marked from 'marked'
-import axios from 'axios'
+import marked from 'marked';
+import axios from 'axios';
 
 export default {
   name: 'editor',
   data() {
     return {
-      mdText: '# 123'
-    }
+      mdText: '# 123',
+    };
   },
   computed: {
-    compliedMarkdown: function () {
-      return marked(this.mdText)
+    compliedMarkdown() {
+      return marked(this.mdText);
     },
   },
   methods: {
-    submit: function () {
-      axios.post(`/blogText`, {
+    submit() {
+      axios.post('/blogText', {
         mdText: this.mdText,
         title: this.mdText.split('\n')[0],
-      }).then((res) => {
-        console.log(res)
-      }).catch((err) => {
-        console.log(err)
-      })
-    }
-  }
+      });
+    },
+  },
 };
 </script>
 
