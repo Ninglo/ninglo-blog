@@ -14,7 +14,7 @@ export default {
   name: 'editor',
   data() {
     return {
-      mdText: '# 123',
+      mdText: '# HelloWorld',
     };
   },
   computed: {
@@ -24,9 +24,12 @@ export default {
   },
   methods: {
     submit() {
-      axios.post('/blogText', {
+      axios.post('/apii/', {
         mdText: this.mdText,
         title: this.mdText.split('\n')[0],
+      }).then((res) => {
+        console.log(res);
+        this.$router.push('/');
       });
     },
   },
