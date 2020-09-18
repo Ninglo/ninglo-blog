@@ -1,18 +1,20 @@
 <template>
-  <div id="app">
-    <myhead :items="[{ id: 1, uri: 'bing.com' }, { id: 2, uri: 'baidu.com' }]"></myhead>
-    <editor></editor>
-  </div>
+<div id="app">
+    <myhead :links="[
+        { id: 1, uri: 'bing.com' },
+        { id: 2, uri: 'baidu.com' },
+    ]">
+    </myhead>
+    <router-view></router-view>
+</div>
 </template>
 
 <script>
 import myhead from './components/myhead.vue';
-import editor from './components/mdEditor.vue';
 
 export default {
   name: 'App',
   components: {
-    editor,
     myhead,
   },
 };
@@ -20,11 +22,11 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 </style>

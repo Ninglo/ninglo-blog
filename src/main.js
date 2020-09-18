@@ -1,10 +1,10 @@
 import Vue from 'vue';
+import router from './router';
 import App from './App.vue';
-import marked from 'marked';
 
 Vue.config.productionTip = true;
 
 new Vue({
-  marked,
+  router,
   render: (h) => h(App),
 }).$mount('#app');

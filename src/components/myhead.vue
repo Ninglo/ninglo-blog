@@ -1,14 +1,20 @@
 <template>
-    <header class="myhead">
-        <a v-for="item in items" :key="item.id" :href="item.uri">{{ item.id }}</a>
-    </header>
+<header class="myhead">
+    <router-link :to="{ name: 'user', params: { id: id }}">{{ id }}</router-link>
+    <router-link :to="{ name: 'mdEditor' }">Editor</router-link>
+</header>
 </template>
 
 <script>
 export default {
   name: 'myhead',
   props: {
-    items: Array,
+    links: Array,
+  },
+  data() {
+    return {
+      id: 111,
+    };
   },
 };
 </script>
