@@ -2,7 +2,7 @@
     <div id="editor">
       <div style="width: 100%; height: 3%"><button @click="submit">Submit</button></div>
       <textarea :value="mdText" @input="mdText = $event.target.value"></textarea>
-      <div class="left" v-html="compliedMarkdown" ref="mdHTML"></div>
+      <div class="left" v-html="compliedMarkdown"></div>
     </div>
 </template>
 
@@ -24,11 +24,9 @@ export default {
   },
   methods: {
     submit() {
-      axios.post('/apii/', {
+      axios.post('http://192.168.1.105:8000/api/blogText', {
         mdText: this.mdText,
-        title: this.mdText.split('\n')[0],
-      }).then((res) => {
-        console.log(res);
+      }).then(() => {
         this.$router.push('/');
       });
     },
