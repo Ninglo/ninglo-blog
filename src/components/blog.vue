@@ -15,12 +15,15 @@ export default {
   },
   // 实现很丑, 记得改
   created() {
-    setTimeout(() => {
-      axios.get(`http://192.168.1.105:8000/api/blogText/${this.$route.params.index}`)
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      axios.get(`/api/blogText/${this.$route.params.index}`)
         .then((res) => {
           this.blog = marked(res.data);
         });
-    }, 1000);
+    },
   },
 };
 </script>

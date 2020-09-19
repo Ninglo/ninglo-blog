@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     submit() {
-      axios.post('http://192.168.1.105:8000/api/blogText', {
+      axios.post('/api/blogText', {
         mdText: this.mdText,
       }).then(() => {
         this.$router.push('/');
