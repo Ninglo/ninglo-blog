@@ -1,5 +1,6 @@
 <template>
 <header class="myhead">
+    <router-link :to="{ name: 'main'}">main</router-link>
     <router-link :to="{ name: 'user', params: { id: id }}">{{ id }}</router-link>
     <router-link :to="{ name: 'mdEditor' }">Editor</router-link>
 </header>
