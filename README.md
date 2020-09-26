@@ -10,7 +10,7 @@ Blog基于Vue + Express编写而成
 
 ### 地址
 
-[Blog地址](http://ninglo.xyz)
+[Blog地址](http://www.ninglo.xyz)
 [前端地址](https://github.com/Ninglo/ninglo-blog)
 [后端地址](https://github.com/Ninglo/ninglo-blog-api)
 
