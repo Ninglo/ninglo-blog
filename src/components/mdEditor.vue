@@ -1,8 +1,10 @@
 <template>
     <div id="editor">
-      <div style="width: 100%; height: 3%"><button @click="submit">Submit</button></div>
-      <textarea :value="mdText" @input="mdText = $event.target.value"></textarea>
-      <div class="left" v-html="compliedMarkdown"></div>
+      <button @click="submit">Submit</button>
+      <div id="editorBody">
+        <textarea :value="mdText" @input="mdText = $event.target.value"></textarea>
+        <div class="displayHtml" v-html="compliedMarkdown"></div>
+      </div>
     </div>
 </template>
 
@@ -36,29 +38,27 @@ export default {
 
 <style scoped>
 /* markdown 编译后html没有居左 */
-html,
-body,
 #editor {
   margin: 0;
-  height: 1000px;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
-textarea,
-#editor div {
-  display: inline-block;
-  width: 49%;
-  height: 100%;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0 20px;
+#editorBody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 textarea {
+  flex-basis: 48%;
+  height: 300px;
   border: none;
   border-right: 1px solid #ccc;
-  resize: none;
   outline: none;
   background-color: #f6f6f6;
   font-size: 14px;
@@ -66,7 +66,7 @@ textarea {
   padding: 20px;
 }
 
-code {
-  color: #f66;
+.displayHtml {
+  flex-basis: 48%;
 }
 </style>

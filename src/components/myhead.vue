@@ -1,8 +1,8 @@
 <template>
 <header class="myhead">
-    <router-link :to="{ name: 'main'}">main</router-link>
-    <router-link :to="{ name: 'user', params: { id: id }}">{{ id }}</router-link>
-    <router-link :to="{ name: 'mdEditor' }">Editor</router-link>
+    <router-link :to="{ name: 'main'}" tag="button">main</router-link>
+    <router-link :to="{ name: 'user', params: { id: id }}" tag="button">{{ id }}</router-link>
+    <router-link :to="{ name: 'mdEditor' }" tag="button">Editor</router-link>
 </header>
 </template>
 
@@ -28,5 +28,10 @@ export default {
     height: 50px;
     width: 98%;
     border: solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
 </style>
